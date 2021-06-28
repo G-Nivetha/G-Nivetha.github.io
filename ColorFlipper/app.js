@@ -7,7 +7,7 @@ btn.addEventListener("click", () => {
     const randomNumber = getRandomNumber();
     console.log(randomNumber);
     document.body.style.backgroundColor = colors[randomNumber];
-    color.text.Content = colors[randomNumber];
+    color.textContent = colors[randomNumber];
 });
 
 let getRandomNumber = () => {
