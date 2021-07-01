@@ -3,26 +3,36 @@
     font-family: Gotham Rounded, sans-serif;
   }
   
+  html {
+    background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+    background-size: cover;
+  }
+
   body {
-    background: linear-gradient(to right, hsl(200, 100%, 50%), hsl(175, 100%, 50%));
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
   }
   
   .clock {
-    width: 300px;
-    height: 300px;
-    background-color: rgba(255, 255, 255, .8);
+    width: 30rem;
+    height: 30rem;
+    border: 5px solid white;
     border-radius: 50%;
-    border: 2px solid black;
     position: relative;
+    padding: 1px;
+    box-shadow:
+      0 0 0 4px rgba(0,0,0,0.1),
+      inset 0 0 0 3px #EFEFEF,
+      inset 0 0 10px black,
+      0 0 10px rgba(0,0,0,0.2);
   }
   
   .clock .number {
     --rotation: 0;
+    padding: 10px;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -48,7 +58,6 @@
     position: absolute;
     bottom: 50%;
     left: 50%;
-    border: 1px solid white;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transform-origin: bottom;
