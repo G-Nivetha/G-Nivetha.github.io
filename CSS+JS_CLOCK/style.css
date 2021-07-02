@@ -22,12 +22,6 @@
     border: 5px solid white;
     border-radius: 50%;
     position: relative;
-    padding: 1px;
-    box-shadow:
-      0 0 0 4px rgba(0,0,0,0.1),
-      inset 0 0 0 3px #EFEFEF,
-      inset 0 0 10px black,
-      0 0 10px rgba(0,0,0,0.2);
   }
   
   .clock .number {
