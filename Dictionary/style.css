@@ -1,0 +1,180 @@
+:root {
+    --box-shadow-color: #9c9c9c;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+}
+
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+section .menu{    
+    font-family: arial;
+    font-weight: bold;
+    color: #F5F5F5 !important;
+    font-size: 30px;
+    text-shadow: 1px 1px 0px #7CACDE;
+    box-shadow: 1px 1px 1px #BEE2F9;
+    padding-bottom: 45px;
+    border: 0px solid #3866A3;
+    background: #0099CC;
+    height: 40px;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+section .searchForm input[type=search] {
+    margin: 20px 5px;
+    padding: 15px 15px;
+    justify-content: center;
+    background-color: #ece7e7;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    box-shadow: 2px 2px 8px var(--box-shadow-color);
+    transition: box-shadow 0.5s;
+}
+
+section .searchForm input[type=search]:hover {
+    box-shadow: 5px 5px 10px var(--box-shadow-color);
+}
+
+section .searchForm input[type=search]:focus {
+    box-shadow: 5px 5px 10px var(--box-shadow-color);
+}
+
+section .searchForm input[type=button] {
+  margin: 0;
+  font-family: arial;
+  font-weight: bold;
+  color: #F5F5F5 !important;
+  font-size: 20px;
+  text-shadow: 1px 1px 0px #7CACDE;
+  box-shadow: 1px 1px 1px #BEE2F9;
+  padding: 10px 15px;
+  border-radius: 19px;
+  border: none;
+  background: #63B8EE;
+  outline: none;
+  background: linear-gradient(to top, #63B8EE, #468CCF);
+}
+
+section .searchForm input[type=button]:hover {
+    color: #FFFFFF !important;
+  background: #468CCF;
+  background: linear-gradient(to top, #468CCF, #63B8EE);
+}
+
+
+.accordion {
+    box-sizing: border-box;
+    display: flex;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    width: 100%;
+}
+
+.accordion-select {
+    cursor: pointer;
+    margin: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.accordion-title {
+    position: relative;
+}
+
+.accordion-title:not(:nth-last-child(2))::after {
+    border: 1px solid transparent;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.accordion-title span {
+    bottom: 0px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.accordion-content {
+    box-sizing: border-box;
+    overflow: auto;
+    position: relative;
+    transition: margin 0.3s ease 0.1s;
+}
+
+.accordion-select:checked + .accordion-title + .accordion-content {
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+/* Generated styles starts here */
+
+.accordion {
+    border-color: #dedede;
+    border-radius: 18px;
+    border-style: solid;
+    border-width: 3px;
+    flex-direction: column;
+    height: auto;
+} 
+
+.accordion-title,
+.accordion-select  {
+    background-color: #ffffff;
+    color: #7f8787;
+    width: 100%;
+    height: 56px;
+    font-size: 21px;
+}
+
+.accordion-select {
+    margin-bottom: -56px;
+    margin-right: 0;
+}
+
+.accordion-title:not(:nth-last-child(2))::after {
+    border-bottom-color: rgb(234, 234, 234);
+    border-right-color: transparent;
+} 
+
+.accordion-select:hover + .accordion-title,
+.accordion-select:checked + .accordion-title {
+    background-color: #ffffff;
+} 
+
+ .accordion-title span  {	
+    transform: rotate(0deg);
+    -ms-writing-mode: lr-tb;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+    padding-left: 28px;
+    padding-right: 28px;
+    line-height: 56px;
+} 
+
+.accordion-content {
+    background-color: #f7f7f7;
+    color: #7f8787;
+    height: 230px;
+    margin-bottom: -230px;
+    margin-right: 0;
+    padding: 12px;
+    width: 100%;
+} 
