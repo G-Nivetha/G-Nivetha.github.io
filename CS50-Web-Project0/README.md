@@ -26,16 +26,16 @@ Your website must meet the following requirements.
 - CSS3
 ## YouTube Demo
 
-[Video_Link](https://)
+[Video_Link](https://youtu.be/cWUZgSHSHb4)
 
 ## Webpage
 
-[Website](https://)
+[Website](https://g-nivetha.github.io/LearningHub/CS50-Web-Project0/)
 
 
 ## Authors
 
 👤 **Author**
 
-[https://github.com/ggotora](https://)
+[https://github.com/G-Nivetha](https://github.com/G-Nivetha)
 
