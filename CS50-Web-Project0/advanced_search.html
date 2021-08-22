@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Search</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="advanced.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper" style="background-color: #d7d7ee;">
+            <a href="#" class="brand-logo"><img class="responsive-img" width="150px"
+                    style="margin-left: 2rem; margin-top: 10px ;align-items: center; justify-content: center;"
+                    src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></a>
+            <ul id="nav-mobile" class="right ">
+                <li><a href="index.html">Search</a></li>
+                <li><a href="image_search.html">Images</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="row">
+            <div class=" header col s3 ">Advanced Search</div>
+        </div>
+        <form action="https://google.com/search">
+            <div class="row">
+                <div class="col s3 ">Find pages with...</div>
+                <div class="col s4 offset-s5 show-on-large">To do this in the search box</div>
+            </div>
+            <div class="row">
+                <div class="col s3 ">all these words:</div>
+                <div class="col s5 input-field left-align">
+                    <input id="search" type="text" name="as_q">
+                </div>
+                <div class="col s4 show-on-large">Type the important words: tri-color rat terrier</div>
+            </div>
+            <div class="row">
+                <div class="col s3">this exact word or phrase:</div>
+                <div class="col s5 input-field">
+                    <input id="search" type="text" name="as_epq">
+                </div>
+                <div class="col s4 show-on-large">Put exact words in quotes: "rat terrier"</div>
+            </div>
+            <div class="row">
+                <div class="col s3">any of these words:</div>
+                <div class="col s5 input-field">
+                    <input id="search" type="text" name="as_oq">
+                </div>
+                <div class="col s4 show-on-large">Type OR between all the words you want: miniature OR standard
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s3">none of these words:</div>
+                <div class="col s5 input-field">
+                    <input id="search" type="text" name="as_eq">
+                </div>
+                <div class="col s4 show-on-large">Put a minus sign just before words that you don't want:<br>
+                    -rodent, -"Jack Russell"</div>
+            </div>
+            <div class="container center-align">
+                <input class="btn" type="submit" value="Google Search">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
