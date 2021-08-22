@@ -37,5 +37,5 @@ Your website must meet the following requirements.
 
 👤 **Author**
 
-[https://github.com/ggotora](https://)
+[https://](https://)
 
