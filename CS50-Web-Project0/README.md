@@ -37,9 +37,6 @@ Your website must meet the following requirements.
 
 👤 **Author**
 
-<<<<<<< HEAD
 [https://github.com/G-Nivetha](https://github.com/G-Nivetha)
-=======
-[https://](https://)
->>>>>>> b51daa0fe79711b89794b0539beebde5b5208628
+
 
