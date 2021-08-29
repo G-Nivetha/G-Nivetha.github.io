@@ -1,0 +1,26 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Entry not found: {{title}}
+{% endblock %}
+
+{% block body %}
+  {% if not titles %}
+  <h1> Sorry! No Articles in Encyclopedia</h1>
+  <br><br>
+  <a class="btn btn-primary" href="{% url 'create' %}">Create New Page</a>
+  {% else %}
+  <h2>Error: Entry "{{title}}" does not exist</h2>
+  <p>The requested entry "{{title}}" does not exist.</p>
+  <p>Check the <a href="{% url 'index' %}">index</a> page to see available articles.</p>
+  {% endif %}
+  {% if related_titles %}
+  <p>Related Entries:</p>
+    <ul>
+      {% for title in related_titles %}
+      <li><a href="{% url 'entry' title=title %}">{{title}}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endblock %}
