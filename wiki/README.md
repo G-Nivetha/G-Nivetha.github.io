@@ -40,10 +40,11 @@ The aim of this project was to build a Wikipedia-like online encyclopedia using 
   * Once the entry is saved, the user should be redirected back to that entry’s page.
 * **Random Page:** Clicking “Random Page” in the sidebar should take user to a random encyclopedia entry.
 * **Markdown to HTML Conversion:** On each entry’s page, any Markdown content in the entry file should be converted to HTML before being displayed to the user. You may use the python-markdown2 package to perform this conversion, installable via pip3 install markdown2.
+* **Additional:** [ In addition to above requirements I added **Delete** and **Rename** functionality with my own interest. ]
 
 ## YouTube Demo
 
-[Video_Link](https://youtu.be/)
+[Video_Link](https://youtu.be/h8JtBPUUyX8)
 
 ## Authors
 
