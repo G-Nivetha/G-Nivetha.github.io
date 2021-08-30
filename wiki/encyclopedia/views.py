@@ -15,6 +15,7 @@ class CreateEntry(forms.Form):
     text = forms.CharField(label='', widget=forms.Textarea(attrs={"placeholder": "Article Content using Github Markdown"}))
 
 class EditEntry(forms.Form):
+    rename = forms.CharField(label='', required=False, widget=forms.TextInput(attrs={"placeholder": "Rename (optional)"}))
     text = forms.CharField(label='', widget=forms.Textarea())
 
 class DeleteEntry(forms.Form):
@@ -44,7 +45,6 @@ def index(request):
         })
 
 def entry(request, title):
-    """ Displays the requested entry page, if it exists """
 
     entry_mdfile = util.get_entry(title)
 
@@ -120,14 +120,34 @@ def create(request):
         })
 
 def edit(request,title):
-    if request.method == "POST":
+    if request.method == "GET":
+        text = util.get_entry(title)
+
+        if text == None:
+            messages.error(request, f'No article exist in the name - "{title}" , please create a new article instead!')
+            return HttpResponseRedirect(reverse("create"))
+        return render(request, "encyclopedia/edit.html", {
+            "title": title,
+            "edit_entry": EditEntry(initial={'text':text}),
+            "search_entry": SearchEntry()
+        })
+
+    elif request.method == "POST":
         form = EditEntry(request.POST)
 
         if form.is_valid():
-          text = form.cleaned_data['text']
-          util.save_entry(title, text)
-          messages.success(request, f'Article "{title}" updated successfully!')
-          return redirect(reverse('entry', args=[title]))
+            rename = form.cleaned_data['rename']
+            text = form.cleaned_data['text']
+            if rename :
+                util.delete_entry(title)
+                util.save_entry(rename, text)
+                messages.success(request, f'Article "{title}" is renamed as "{rename}" and updated successfully!')
+                return redirect(reverse('entry', args=[rename]))
+
+            else:
+                util.save_entry(title, text)
+                messages.success(request, f'Article "{title}" updated successfully!')
+                return redirect(reverse('entry', args=[title]))
 
         else:
           messages.error(request, f'Invalid, please try again!')
@@ -137,17 +157,7 @@ def edit(request,title):
             "search_entry": SearchEntry()
           })
 
-    else:
-        text = util.get_entry(title)
 
-        if text == None:
-            messages.error(request, f'No article exist in the name - "{title}" , please create a new article instead!')
-
-        return render(request, "encyclopedia/edit.html", {
-          "title": title,
-          "edit_entry": EditEntry(initial={'text':text}),
-          "search_entry": SearchEntry()
-        })
 
 def random_entry(request):
     titles = util.list_entries()

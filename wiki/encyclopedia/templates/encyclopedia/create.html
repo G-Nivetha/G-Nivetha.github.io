@@ -8,19 +8,12 @@
 
   <h1>Create A New Article:</h1>
 
-  {% for message in messages %}
-  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    {{ message | safe }}
-  </div>
-  {% endfor %}
+  {% include 'partials/messages.html' %}
 
   <form action="{% url 'create' %}" method="post">
     {% csrf_token %}
     {{ create_entry }}
-    <input class= "btn btn-primary" type="submit" value="Submit">
+    <input class= "btn btn-primary" type="submit" value="Create">
   </form>
 
 {% endblock %}

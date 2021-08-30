@@ -5,17 +5,14 @@
 {% endblock %}
 
 {% block body %}
-    {% for message in messages %}
-      <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        {{ message | safe }}
-      </div>
-    {% endfor %}
+    {% include 'partials/messages.html' %}
+    <h1>Article: {{title}}</h1>
+    <br>
+    <h3>Content:</h3>
+    <div class="content">
 
     {{entry|safe}}
-
+    </div>
     <a class="btn btn-primary" href="{% url 'edit' title=title %}">Edit Page</a>
 
 {% endblock %}
